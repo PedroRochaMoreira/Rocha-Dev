@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#090a0d"/><stop offset=".53" stop-color="#171113"/><stop offset="1" stop-color="#6e391e"/></linearGradient>
+    <radialGradient id="glow" cx="78%" cy="42%" r="47%"><stop stop-color="#f5bf83" stop-opacity=".88"/><stop offset=".25" stop-color="#c46f39" stop-opacity=".38"/><stop offset="1" stop-color="#0b0b0f" stop-opacity="0"/></radialGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ba7344" stop-opacity="0"/><stop offset=".4" stop-color="#edb17c"/><stop offset="1" stop-color="#ba7344" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g fill="none" stroke="#d99865" stroke-opacity=".26" stroke-width="1">
+    <path d="M650 98h190l45 45h178M692 172h105l39 39h238M725 454h95l46-46h236M626 524h165l52-52h207"/>
+    <circle cx="885" cy="143" r="4" fill="#e8ad7b"/><circle cx="836" cy="211" r="4" fill="#e8ad7b"/><circle cx="820" cy="478" r="4" fill="#e8ad7b"/>
+  </g>
+  <rect x="74" y="76" width="3" height="478" fill="#d79967"/>
+  <text x="113" y="302" fill="#f4f0ed" font-family="Arial, sans-serif" font-size="57" font-weight="700" letter-spacing="9">ROCHA</text>
+  <text x="113" y="370" fill="#d99967" font-family="Arial, sans-serif" font-size="57" font-weight="700" letter-spacing="9">DEV</text>
+  <rect x="113" y="408" width="390" height="1" fill="url(#line)"/>
+  <text x="113" y="451" fill="#d9d0ca" font-family="Arial, sans-serif" font-size="21" letter-spacing="1">CÓDIGO QUE TRANSFORMA.</text>
+  <text x="113" y="504" fill="#d4996d" font-family="Arial, sans-serif" font-size="13" letter-spacing="3">TECNOLOGIA · PERFORMANCE · RESULTADOS</text>
+  <text x="113" y="550" fill="#8f8177" font-family="Arial, sans-serif" font-size="13">rochadev.com.br</text>
+</svg>
