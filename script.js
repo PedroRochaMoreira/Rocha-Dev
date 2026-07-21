@@ -1,5 +1,7 @@
 const backToTop = document.querySelector('.back-to-top');
 const preloader = document.querySelector('.preloader');
+const menuToggle = document.querySelector('.menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
 
 window.addEventListener('load', () => {
   window.setTimeout(() => preloader.classList.add('hidden'), 2000);
@@ -23,8 +25,22 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     const target = document.querySelector(link.getAttribute('href'));
     if (!target) return;
     event.preventDefault();
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    menuToggle.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
     smoothScrollTo(target.getBoundingClientRect().top + window.scrollY, 780);
   });
+});
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  menuToggle.classList.toggle('open', isOpen);
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+  document.body.classList.toggle('menu-open', isOpen);
 });
 
 backToTop.addEventListener('click', () => smoothScrollTo(0, 900));
@@ -37,12 +53,27 @@ const closeModal = (modal) => { modal.classList.remove('open'); modal.setAttribu
 const openModal = (modal) => { modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); modal.querySelector('button, input')?.focus(); };
 
 document.querySelector('.project-list-trigger').addEventListener('click', () => openModal(projectModal));
-document.querySelector('.open-contact').addEventListener('click', () => openModal(contactModal));
+document.querySelectorAll('.open-contact').forEach((button) => button.addEventListener('click', () => {
+  mobileMenu.classList.remove('open');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  menuToggle.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('menu-open');
+  openModal(contactModal);
+}));
 document.querySelectorAll('.modal').forEach((modal) => {
   modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(modal); });
   modal.querySelector('.modal-close').addEventListener('click', () => closeModal(modal));
 });
-document.addEventListener('keydown', (event) => { if (event.key === 'Escape') document.querySelectorAll('.modal.open').forEach(closeModal); });
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape') return;
+  document.querySelectorAll('.modal.open').forEach(closeModal);
+  mobileMenu.classList.remove('open');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  menuToggle.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('menu-open');
+});
 document.querySelector('.contact-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const form = event.currentTarget;

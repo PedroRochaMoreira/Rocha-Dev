@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="content-detail.css" />
     <link rel="stylesheet" href="button-polish.css" />
     <link rel="stylesheet" href="signature-experience.css" />
+    <link rel="stylesheet" href="mobile-navigation.css" />
   </head>
   <body>
     <div class="preloader" aria-label="Carregando Rocha Dev" role="status">
@@ -52,7 +53,14 @@
         <a href="#diferenciais">Serviços</a><a href="#servicos">Soluções</a><a href="#projetos">Projetos</a><a href="#processo">Método</a>
       </nav>
       <button class="button button-small open-contact" type="button">Iniciar projeto <span>↗</span></button>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
     </header>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-top"><span>MENU</span><span>ROCHA DEV / 2026</span></div>
+      <nav aria-label="Navegação mobile"><a href="#diferenciais"><b>01</b> Serviços <i>↗</i></a><a href="#servicos"><b>02</b> Soluções <i>↗</i></a><a href="#projetos"><b>03</b> Projetos <i>↗</i></a><a href="#processo"><b>04</b> Método <i>↗</i></a></nav>
+      <button class="mobile-contact open-contact" type="button">Iniciar projeto <span>↗</span></button>
+      <div class="mobile-menu-bottom"><a href="https://instagram.com/RochaDevtech" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://wa.me/5561986092449" target="_blank" rel="noreferrer">WhatsApp ↗</a></div>
+    </div>
 
     <main>
       <section class="hero" id="inicio">
